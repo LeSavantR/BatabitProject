@@ -134,19 +134,34 @@ main {
     color: #757575;
 }
 /* Currency Table -General Sections Table */
+.main-tables-container {
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    gap: 15px;
+}
+.main-currency-table {
+    margin-left: 45px;
+}
+.main-comission-table {
+    margin-right: 45px;
+}
 .main-currency-table, .main-comission-table {
     width: 70%;
+    scroll-snap-align: center;
     min-width: 224px;
-    max-width: 500px;
+    max-width: 300px;
     height: 360px;
-    margin: 0 auto;
     font-family: "Inter", sans-serif;
 }
 .main-currency-table h6 {
     margin-bottom: 15px;
+    margin-left: 20px;
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 2.3rem;
+    /* text-align: initial; */
     color: var(--bitcoin-orange);
 }
 .currency_table, .comission_table {
@@ -209,6 +224,8 @@ main {
 /* Comission Table */
 .main-comission-table h6 {
     margin-bottom: 15px;
+    /* text-align: right; */
+    margin-right: 20px;
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 2.3rem;
@@ -392,10 +409,19 @@ main {
     line-height: 1.8rem;
     color: #757575;
 }
+.plans-container--slider {
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    gap: 15px;
+}
 .plans-container--cards {
     position: relative;
+    scroll-snap-align: center;
     width: 70%;
-    min-width: 230px;
+    min-width: 190px;
     max-width: 300px;
     height: 250px;
     margin: 50px auto 0 auto;
@@ -403,6 +429,12 @@ main {
     background-color: var(--just-white);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+.plans-container--cards:first-child {
+    margin-left: 60px;
+}
+.plans-container--cards:last-child {
+    margin-right: 60px;
 }
 .plans-container--cards .text {
     position: absolute;
@@ -458,4 +490,29 @@ main {
     height: 20px;
     background-image: url('../assets/icons/orange-right-arrow.svg');
     vertical-align: text-bottom;
+}
+footer {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+footer section {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+footer .left ul {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.left li {
+    margin: 10px 0;
+}
+.left a {
+    text-decoration: none;
+    color: var(--just-white);
 }
